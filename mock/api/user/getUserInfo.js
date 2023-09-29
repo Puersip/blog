@@ -7,7 +7,7 @@ export default [
         code: 0,
         message: 'ok',
         data: {
-          username: 'chen',
+          username: 'lumi',
           age: 18,
         },
       };

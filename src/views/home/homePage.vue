@@ -5,7 +5,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { getUserInfo } from '@/api/about.js';
+import { getUserInfo } from '@/api/user.js';
 
 const userInfo = ref({});
 
