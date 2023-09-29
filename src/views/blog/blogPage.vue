@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><v-md-preview :text="md"></v-md-preview></div>
+    <v-md-preview :text="md"></v-md-preview>
   </div>
 </template>
 

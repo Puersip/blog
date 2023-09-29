@@ -12,24 +12,7 @@ export default [
           summary: '## 你好吗',
           content: `::: warning
           这是一段警告
-          :::
-
-        ::: danger
-        这是一个危险警告
-        :::
-
-        ::: details
-          这是一个详情块，在 IE / Edge 中不生效
-        :::
-
-        ::: tip 自定义标题
-          你也可以自定义块中的标题
-        :::
-
-        ::: danger STOP
-          危险区域，禁止通行
-        :::
-        `,
+          ::: `,
         },
       };
     },
