@@ -1,15 +1,18 @@
 <template>
-  <div>{{ username }}</div>
-  <div>{{ age }}</div>
+  <div>{{ userInfo.username }}</div>
+  <div>{{ userInfo.age }}</div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { getUserInfo } from '@/api/about.js';
+import { ref, onActivated } from 'vue';
+import { getUserInfo } from '@/api/user.js';
 
 const userInfo = ref({});
 
-getData();
+onActivated(() => {
+  console.log('onActivated');
+  getData();
+});
 
 function getData() {
   getUserInfo().then((res) => {

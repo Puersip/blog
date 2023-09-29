@@ -1,3 +1,5 @@
+const Layout = () => import('@/components/layoutPage.vue');
+
 // 配置基础路由
 export const basicRoutes = [
   {
@@ -9,7 +11,7 @@ export const basicRoutes = [
   {
     name: '',
     path: '/',
-    // component: Layout,
+    component: Layout,
     redirect: '/home',
     children: [
       {
@@ -44,9 +46,9 @@ export const basicRoutes = [
         },
       },
       {
-        name: 'friends',
-        path: '/friends',
-        component: () => import('@/views/friends/friendsPage.vue'),
+        name: 'links',
+        path: '/links',
+        component: () => import('@/views/links/linksPage.vue'),
         meta: {
           title: '友人帐',
           icon: 'mdi:human-queue',
