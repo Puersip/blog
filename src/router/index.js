@@ -1,5 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import { basicRoutes, NOT_FOUND_ROUTE, EMPTY_ROUTE } from '@/router/index.js';
+import {
+  basicRoutes,
+  NOT_FOUND_ROUTE,
+  EMPTY_ROUTE,
+} from '@/router/routes/index.js';
 import { asyncRoutes } from './routes';
 
 const router = createRouter({

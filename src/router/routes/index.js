@@ -3,7 +3,7 @@ export const basicRoutes = [
   {
     name: '404',
     path: '/404',
-    component: () => import('@/views/error-page/404.vue'),
+    component: () => import('@/views/error-page/errorPage.vue'),
     isHidden: true,
   },
   {
@@ -15,7 +15,7 @@ export const basicRoutes = [
       {
         name: 'home',
         path: '/home',
-        component: () => import('@/views/home/index.vue'),
+        component: () => import('@/views/home/homePage.vue'),
         meta: {
           title: '首页',
           order: 0,
@@ -25,7 +25,7 @@ export const basicRoutes = [
       {
         name: 'category',
         path: '/category/:categoryId',
-        component: () => import('@/views/category/index.vue'),
+        component: () => import('@/views/category/categoryPage.vue'),
         meta: {
           title: '分类',
           KeepAlive: true,
@@ -33,19 +33,9 @@ export const basicRoutes = [
         isHidden: true,
       },
       {
-        name: 'tag',
-        path: '/tag/:tagId',
-        component: () => import('@/views/tag/index.vue'),
-        meta: {
-          title: '标签',
-          KeepAlive: true,
-        },
-        isHidden: true,
-      },
-      {
         name: 'archives',
         path: '/archives',
-        component: () => import('@/views/archives/index.vue'),
+        component: () => import('@/views/archives/archivesPage.vue'),
         meta: {
           title: '归档',
           icon: 'mdi:square-rounded-badge',
@@ -56,7 +46,7 @@ export const basicRoutes = [
       {
         name: 'friends',
         path: '/friends',
-        component: () => import('@/views/friends/index.vue'),
+        component: () => import('@/views/friends/friendsPage.vue'),
         meta: {
           title: '友人帐',
           icon: 'mdi:human-queue',
@@ -67,7 +57,7 @@ export const basicRoutes = [
       {
         name: 'about',
         path: '/about',
-        component: () => import('@/views/about/index.vue'),
+        component: () => import('@/views/about/aboutPage.vue'),
         meta: {
           title: '关于我',
           icon: 'mdi:emoticon-devil',

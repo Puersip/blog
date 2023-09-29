@@ -10,6 +10,10 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 ```
 ├── dist/
+├── mock/
+    ├── api/                       // mock的接口
+    ├── test/                      // mock的测试接口
+    index.js                       // mock入口配置文件
 └── src/
     ├── api/                       // 接口请求目录
     ├── assets/                    // 静态资源目录
