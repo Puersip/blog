@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-card">
+  <div :class="{ 'blog-card': true, 'night-mode': isNightMode }">
     <h2>{{ props.blog.title }}</h2>
     <p>{{ props.blog.summary }}</p>
   </div>
@@ -10,6 +10,10 @@ const props = defineProps({
   blog: {
     type: Object,
     default: null,
+  },
+  isNightMode: {
+    type: Boolean,
+    default: false,
   },
 });
 </script>
@@ -42,5 +46,10 @@ const props = defineProps({
 .blog-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
   cursor: pointer; /* 鼠标悬停时变成手形状 */
+}
+
+.night-mode {
+  background-color: #333; /* 夜间模式下的背景色 */
+  color: #fff; /* 夜间模式下的文本颜色 */
 }
 </style>
