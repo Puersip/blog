@@ -21,6 +21,7 @@
     "@kangc/v-md-editor": "^2.3.17",
     "axios": "^1.5.1",
     "pinia": "^2.1.6",
+    "vite-plugin-prismjs": "^0.0.8",
     "vue": "^3.3.4"
   },
   "devDependencies": {

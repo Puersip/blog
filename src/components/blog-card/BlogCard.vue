@@ -1,6 +1,6 @@
 <template>
   <router-link
-    :to="'/blog/' + blog.id"
+    :to="'/blog/' + props.blog.id"
     :class="{ 'blog-card': true, 'night-mode': isNightMode }"
   >
     <h2>{{ props.blog.title }}</h2>
