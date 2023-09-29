@@ -5,7 +5,7 @@
         v-for="blog in blogs"
         :key="blog.id"
         :blog="blog"
-        :is-night-mode="isDarkMode"
+        :is-night-mode="DarkMode"
       />
     </div>
     <!-- 返回顶部按钮 -->
@@ -14,20 +14,20 @@
 </template>
 
 <script setup>
-import { defineOptions, ref, onActivated, watchEffect } from 'vue';
+import { defineOptions, ref, onActivated } from 'vue';
 import BlogCard from '@/components/blog-card/BlogCard.vue';
 import { getBlogList } from '@/api/blog.js';
+import { isDarkMode } from '@/utils/common/isDarkMode.js';
 
 defineOptions({ name: 'HomePage' });
 
 const blogs = ref([]);
-const isDarkMode = ref(
-  window.matchMedia('(prefers-color-scheme: dark)').matches,
-);
+const DarkMode = ref();
 
 onActivated(() => {
   console.log('onActivated');
   getData();
+  DarkMode.value = isDarkMode();
 });
 
 function getData() {
@@ -42,18 +42,6 @@ function scrollToTop() {
     behavior: 'smooth',
   });
 }
-
-watchEffect(() => {
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  isDarkMode.value = mediaQuery.matches;
-
-  // 当夜间模式变化时的处理逻辑
-  if (mediaQuery.matches) {
-    console.log('夜间模式已启用');
-  } else {
-    console.log('夜间模式未启用');
-  }
-});
 </script>
 
 <style scoped>
