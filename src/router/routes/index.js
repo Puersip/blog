@@ -56,17 +56,6 @@ export const basicRoutes = [
           keepAlive: true,
         },
       },
-      {
-        name: 'about',
-        path: '/about',
-        component: () => import('@/views/about/aboutPage.vue'),
-        meta: {
-          title: '关于我',
-          icon: 'mdi:emoticon-devil',
-          order: 3,
-          keepAlive: true,
-        },
-      },
     ],
   },
 ];
