@@ -1,8 +1,11 @@
 <template>
-  <div :class="{ 'blog-card': true, 'night-mode': isNightMode }">
+  <router-link
+    :to="'/blog/' + blog.id"
+    :class="{ 'blog-card': true, 'night-mode': isNightMode }"
+  >
     <h2>{{ props.blog.title }}</h2>
     <p>{{ props.blog.summary }}</p>
-  </div>
+  </router-link>
 </template>
 
 <script setup>

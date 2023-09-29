@@ -5,7 +5,6 @@
       <router-link to="/category">分类</router-link>
       <router-link to="/archives">归档</router-link>
       <router-link to="/links">友链</router-link>
-      <router-link to="/about">关于我</router-link>
     </div>
   </div>
 </template>
