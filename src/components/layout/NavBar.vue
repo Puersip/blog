@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="navbar">
-      <router-link to="/">首页</router-link>
+      <router-link to="/"><Icon icon="mdi-light:home" />首页</router-link>
       <router-link to="/category">分类</router-link>
       <router-link to="/archives">归档</router-link>
       <router-link to="/links">友链</router-link>

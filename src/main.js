@@ -4,6 +4,7 @@ import { createVMdPreview } from '~/build/plugin/markdown.js';
 import App from './App.vue';
 import { setupRouter } from '@/router';
 import { setupStore } from '@/store';
+import { createIconify } from '~/build/plugin/iconify';
 
 async function setupApp() {
   // 创建App实例
@@ -17,6 +18,9 @@ async function setupApp() {
 
   // 支持markdown预览
   createVMdPreview(app);
+
+  // 引入iconif组件
+  createIconify(app);
 
   // 挂在App
   app.mount('#app');
