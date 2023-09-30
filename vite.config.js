@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import AutoImport from 'unplugin-auto-import/vite';
 import { resolve } from 'path';
 import { viteMockServe } from 'vite-plugin-mock';
 
@@ -9,6 +10,14 @@ export default defineConfig({
     vue(),
     viteMockServe({
       mockPath: 'mock',
+    }),
+    AutoImport({
+      imports: ['vue', 'vue-router'],
+      dts: false,
+      eslintrc: {
+        enabled: false,
+        // 1、改为true用于生成eslint配置。2、生成后改回false，避免重复生成消耗
+      },
     }),
   ],
   resolve: {

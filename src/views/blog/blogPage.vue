@@ -5,8 +5,6 @@
 </template>
 
 <script setup>
-import { onMounted, ref, defineOptions } from 'vue';
-import { useRoute } from 'vue-router';
 import { getBlogDetails } from '@/api/blog.js';
 
 const route = useRoute();

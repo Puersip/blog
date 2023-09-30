@@ -14,7 +14,6 @@
 </template>
 
 <script setup>
-import { defineOptions, ref, onActivated } from 'vue';
 import BlogCard from '@/components/blog-card/BlogCard.vue';
 import { getBlogList } from '@/api/blog.js';
 import { isDarkMode } from '@/utils/common/isDarkMode.js';
