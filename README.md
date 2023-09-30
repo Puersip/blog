@@ -10,10 +10,15 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 ```
 ├── dist/
+├── build/                         // 项目启动构建相关的配置
+    ├── config/                    // vite的配置目录
+    ├── plugin/                    // vite项目导入的插件目录
 ├── mock/
     ├── api/                       // mock的接口
     ├── test/                      // mock的测试接口
     index.js                       // mock入口配置文件
+├── public/                        // 项目的静态资源
+├── settings/                      // 项目的环境设置目录
 └── src/
     ├── api/                       // 接口请求目录
     ├── assets/                    // 静态资源目录
@@ -34,20 +39,26 @@ This template should help get you started developing with Vue 3 in Vite. The tem
     ├── App.vue
     ├── main.js
 ├── tests/                         // 单元测试目录
-├── index.html                     // 项目入口文件
-├── jsconfig.json                  // JavaScript 配置文件
 ├── .editorconfig                  // IDE统一的配置文件
+├── .env                           // 项目环境基础配置
+├── .env.development               // 项目开发环境配置
+├── .env.github                    // 项目github环境配置
+├── .env.production                // 项目生产环境配置
+├── .env.test                      // 项目测试环境配置
 ├── .eslintignore                  // ESlint过滤规则
-├── .eslintrc.cjs                  // ESlint规则
+├── .eslintrc-auto-import.json     // ESlint插件自动导入检测配置
+├── .eslintrc.json                 // ESlint规则
 ├── .gitignore                     // git过滤规则
-├── .prettierrc.cjs                // prettierrc配置规则
 ├── .prettierignore                // prettierrc过滤规则
-├── .stylelintrc.js                // stylelintrc配置规则
+├── .prettierrc.json               // prettierrc配置规则
 ├── .stylelintignore               // stylelintrc过滤规则
+├── .stylelintrc.cjs               // stylelintrc配置规则
 ├── commitlint.config.cjs          // git通用提交规范
-├── vite.config.js                 // Vite 配置文件
-├── .eslintrc-auto-import.json     // 自动导入插件配置文件
-└── package.json
+├── index.html                     // 项目入口文件
+├── package-lock.json              // package-lock文件
+├── package.json                   // package文件
+├── README.md                      // README文档
+└──vite.config.js                  // Vite 配置文件
 ```
 
 ## 技术栈
