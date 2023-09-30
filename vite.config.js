@@ -1,23 +1,24 @@
 import { defineConfig, loadEnv } from 'vite';
-import { resolve } from 'path';
-import { createVitePlugins } from './src/utils/plugin';
-import { convertEnv } from './src/utils/common/convertEnv';
+import { createVitePlugins } from './build/plugin';
+import { convertEnv, getSrcPath, getRootPath } from './build/utils';
+import { createViteProxy } from './build/config/viteProxy';
 
 // https://vitejs.dev/config/
-export default defineConfig((command, mode) => {
-  // const isBuild = command === 'build';
-
+export default defineConfig(({ mode }) => {
+  const srcPath = getSrcPath();
+  const rootPath = getRootPath();
   const env = loadEnv(mode, process.cwd());
   const viteEnv = convertEnv(env);
-  // const { VITE_PORT, VITE_PUBLIC_PATH, VITE_USE_PROXY, VITE_PROXY_TYPE } =
-  //   viteEnv;
+  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_USE_PROXY, VITE_PROXY_TYPE } =
+    viteEnv;
 
   return {
     plugins: createVitePlugins(viteEnv),
+    base: VITE_PUBLIC_PATH || '/',
     resolve: {
       alias: {
-        // 定义@为src的别名
-        '@': resolve(__dirname, './src'),
+        '~': rootPath,
+        '@': srcPath,
       },
     },
     esbuild: {
@@ -27,6 +28,12 @@ export default defineConfig((command, mode) => {
       require: {
         '@/.prettierrc.js': '@c/.prettierrc.cjs', // 修改为实际的文件路径
       },
+    },
+    server: {
+      host: '0.0.0.0',
+      port: VITE_PORT,
+      open: false,
+      proxy: createViteProxy(VITE_PROXY_TYPE, VITE_USE_PROXY),
     },
   };
 });
