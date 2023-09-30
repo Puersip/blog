@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import '@/style/style.css';
-// import { createVMdPreview } from '@/utils/plugin/markdown.js';
+import { createVMdPreview } from '~/build/plugin/markdown.js';
 import App from './App.vue';
 import { setupRouter } from '@/router';
 import { setupStore } from '@/store';
@@ -16,7 +16,7 @@ async function setupApp() {
   await setupRouter(app);
 
   // 支持markdown预览
-  // createVMdPreview(app);
+  createVMdPreview(app);
 
   // 挂在App
   app.mount('#app');
