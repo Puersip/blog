@@ -27,7 +27,9 @@ This template should help get you started developing with Vue 3 in Vite. The tem
         ├── index.js  // 仓库配置文件
     ├── style/                     // 通用样式目录
     ├── utils/                     // 工具函数目录
-        ├── http/                     // axios组建封装
+        ├── common/                // 公用组建封装
+        ├── http/                  // axios组建封装
+        ├── plugin/                // 第三方插件导入封装
     ├── views/                     // 页面组件目录
     ├── App.vue
     ├── main.js
@@ -44,6 +46,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ├── .stylelintignore               // stylelintrc过滤规则
 ├── commitlint.config.cjs          // git通用提交规范
 ├── vite.config.js                 // Vite 配置文件
+├── .eslintrc-auto-import.json     // 自动导入插件配置文件
 └── package.json
 ```
 
