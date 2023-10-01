@@ -15,6 +15,8 @@
 import { onActivated, ref } from 'vue';
 import { getCategory } from '@/api/category';
 
+defineOptions({ name: 'CateGoryPage' });
+
 const categories = ref();
 
 onActivated(() => {
@@ -37,7 +39,7 @@ function getData() {
   text-align: center;
 }
 .categories ul {
-  // list-style: none;
+  list-style: none;
   padding: 20px;
 }
 
