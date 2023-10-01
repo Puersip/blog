@@ -17,17 +17,23 @@
 </template>
 
 <script setup>
+import { onActivated, ref } from 'vue';
+import { getArchives } from '@/api/archives';
+
 defineOptions({ name: 'ArchivesPage' });
 
-const archive = [
-  { date: '2023-01-15', titles: ['Article 1 Title', 'hello1'] },
-  { date: '2023-02-20', titles: ['Article 2 Title', 'hello2'] },
-  { date: '2023-03-10', titles: ['Article 3 Title', 'hello3'] },
-  { date: '2023-04-15', titles: ['Article 1 Title', 'hello4'] },
-  { date: '2023-05-20', titles: ['Article 2 Title', 'hello5'] },
-  { date: '2023-06-10', titles: ['Article 3 Title', 'hello6'] },
-  // Add more entries as needed
-];
+const archive = ref();
+
+onActivated(() => {
+  console.log('onActivated');
+  getData();
+});
+
+function getData() {
+  getArchives().then((res) => {
+    archive.value = res.data;
+  });
+}
 </script>
 
 <style lang="scss" scoped>
