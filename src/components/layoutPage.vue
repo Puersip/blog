@@ -17,13 +17,7 @@
 
 <script setup>
 import NavBar from '@/components/layout/NavBar.vue';
-
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-}
+import { scrollToTop } from '@/utils/common/scrollToTop';
 </script>
 
 <style lang="scss" scoped>
