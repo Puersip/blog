@@ -2,15 +2,17 @@
   <div class="container">
     <h1>友链</h1>
     <div class="links-container">
-      <div
+      <a
         v-for="link in links"
         :key="link.id"
         class="link-card"
+        :href="link.url"
+        target="_blank"
         :style="{ backgroundColor: getRandomColor() }"
       >
         <img class="avatar" :src="link.avatar" alt="Avatar" />
         <span class="name">{{ link.name }}</span>
-      </div>
+      </a>
     </div>
   </div>
 </template>
@@ -36,42 +38,49 @@ const links = [
     name: 'Friend 1',
     avatar:
       'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
+    url: 'https://www.baidu.com',
   },
   {
     id: 2,
     name: 'Friend 2',
     avatar:
       'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
+    url: 'https://www.baidu.com',
   },
   {
     id: 3,
     name: 'Friend 3',
     avatar:
       'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
+    url: 'https://www.baidu.com',
   },
   {
     id: 4,
     name: 'Friend 4',
     avatar:
       'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
+    url: 'https://www.baidu.com',
   },
   {
     id: 5,
     name: 'Friend 5',
     avatar:
       'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
+    url: 'https://www.baidu.com',
   },
   {
     id: 6,
     name: 'Friend 6',
     avatar:
       'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
+    url: 'https://www.baidu.com',
   },
   {
     id: 7,
     name: 'Friend 7',
     avatar:
       'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
+    url: 'https://www.baidu.com',
   },
   // ... 可以添加更多的友链数据
 ];
@@ -123,7 +132,8 @@ const links = [
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
   transition: transform 0.5s ease; /* 添加头像的过渡效果 */
 }
 
@@ -134,7 +144,7 @@ const links = [
 .name {
   font-size: 20px;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
   max-width: 100%; /* 确保名称不会超出卡片的宽度 */
 }
