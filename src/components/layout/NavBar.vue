@@ -1,19 +1,13 @@
 <template>
-  <div class="container">
-    <div class="navbar">
-      <router-link to="/"
-        ><TheIcon icon="iconamoon:home-fill" />首页</router-link
-      >
-      <router-link to="/category"
-        ><TheIcon icon="tabler:category-filled" />分类</router-link
-      >
-      <router-link to="/archives"
-        ><TheIcon icon="ic:round-view-timeline" />归档</router-link
-      >
-      <router-link to="/links"
-        ><TheIcon icon="ri:links-line" />友链</router-link
-      >
-    </div>
+  <div class="navbar">
+    <router-link to="/"><TheIcon icon="iconamoon:home-fill" />首页</router-link>
+    <router-link to="/category"
+      ><TheIcon icon="tabler:category-filled" />分类</router-link
+    >
+    <router-link to="/archives"
+      ><TheIcon icon="ic:round-view-timeline" />归档</router-link
+    >
+    <router-link to="/links"><TheIcon icon="ri:links-line" />友链</router-link>
   </div>
 </template>
 
@@ -24,10 +18,6 @@ defineOptions({ name: 'NavBar' });
 </script>
 
 <style scoped>
-.container {
-  padding: 20px;
-}
-
 .navbar {
   position: fixed;
   top: 0;

@@ -2,7 +2,12 @@
   <div class="container">
     <h1>友链</h1>
     <div class="links-container">
-      <div v-for="link in links" :key="link.id" class="link-card">
+      <div
+        v-for="link in links"
+        :key="link.id"
+        class="link-card"
+        :style="{ backgroundColor: getRandomColor() }"
+      >
         <img class="avatar" :src="link.avatar" alt="Avatar" />
         <span class="name">{{ link.name }}</span>
       </div>
@@ -11,6 +16,20 @@
 </template>
 
 <script setup>
+const colors = [
+  '#e4735c',
+  '#D27992',
+  '#39A328',
+  '#406F95',
+  '#6c5b7b',
+  '#c06c84',
+];
+
+function getRandomColor() {
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
+}
+
 const links = [
   {
     id: 1,
@@ -61,43 +80,50 @@ const links = [
 <style lang="scss" scoped>
 .container {
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px;
+  width: 70vw;
   text-align: center;
 }
 
 .links-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
 }
-
-// .links-container:after {
-//   content: '';
-//   flex: auto;
-// }
 
 .link-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 10px 15px 10px; /* 使用固定的像素值作为外边距 */
-  padding: 15px;
-  width: 20%;
+  justify-items: center; /* 将内容水平居中 */
+  width: 100%;
+  min-width: 200px;
   border: 1px solid #ccc;
-  height: 140px;
   border-radius: 10px;
   transition: transform 0.5s ease;
+  opacity: 0;
+  transform: translateY(-20px); /* 初始位置上移 20 像素 */
+  /* 添加动画 */
+  animation: fadeInUp 1s ease forwards;
 }
 
-// .link-card:nth-child(4n) {
-//   margin-right: 0;
-// }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* 初始位置上移 20 像素 */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* 最终位置为原始位置 */
+  }
+}
 
 .avatar {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin: 10px;
   transition: transform 0.5s ease; /* 添加头像的过渡效果 */
 }
 
@@ -108,13 +134,14 @@ const links = [
 .name {
   font-size: 20px;
   color: #333;
+  margin-bottom: 10px;
   text-align: center;
   max-width: 100%; /* 确保名称不会超出卡片的宽度 */
 }
 
 /* 如果卡片数量小于或等于2，采用单列布局 */
-@media screen and (max-width: 480px) {
-  .single-column-layout .link-card {
+@media screen and (max-width: 200px) {
+  .link-card {
     width: 100%;
   }
 }
