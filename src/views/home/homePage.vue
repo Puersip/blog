@@ -1,12 +1,7 @@
 <template>
   <div class="home">
     <div class="blog-list">
-      <BlogCard
-        v-for="blog in blogs"
-        :key="blog.id"
-        :blog="blog"
-        :is-night-mode="DarkMode"
-      />
+      <BlogCard v-for="blog in blogs" :key="blog.id" :blog="blog" />
     </div>
   </div>
 </template>
@@ -14,17 +9,14 @@
 <script setup>
 import BlogCard from '@/components/blog-card/BlogCard.vue';
 import { getBlogList } from '@/api/blog.js';
-import { isDarkMode } from '@/utils/common/isDarkMode.js';
 
 defineOptions({ name: 'HomePage' });
 
 const blogs = ref([]);
-const DarkMode = ref();
 
 onActivated(() => {
   console.log('onActivated');
   getData();
-  DarkMode.value = isDarkMode();
 });
 
 function getData() {
