@@ -26,7 +26,7 @@ export const basicRoutes = [
       },
       {
         name: 'category',
-        path: '/category/:categoryId',
+        path: '/category',
         component: () => import('@/views/category/categoryPage.vue'),
         meta: {
           title: '分类',
