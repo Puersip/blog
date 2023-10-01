@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'blog-card': true, 'night-mode': isNightMode }">
+  <div :class="{ 'blog-card': true }">
     <router-link :to="'/blog/' + props.blog.id">
       <h2>{{ props.blog.title }}</h2>
     </router-link>
@@ -13,10 +13,6 @@ const props = defineProps({
     type: Object,
     default: null,
   },
-  isNightMode: {
-    type: Boolean,
-    default: false,
-  },
 });
 </script>
 
@@ -27,7 +23,7 @@ const props = defineProps({
   padding: 15px 25px;
   margin: 15px;
   align-items: center;
-  background-color: #fff;
+  // background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column; /* 将卡片竖直排列 */
@@ -42,7 +38,6 @@ const props = defineProps({
 .blog-card h2 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #333;
   text-align: left; /* 文字靠左对齐 */
   transition:
     font-size 0.3s,
@@ -59,17 +54,12 @@ const props = defineProps({
 
 .blog-card p {
   height: 100%;
-  color: #555;
+  // color: #555;
   text-align: left; /* 文字靠左对齐 */
 }
 
 .blog-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
-}
-
-.night-mode {
-  background-color: #333; /* 夜间模式下的背景色 */
-  color: #fff; /* 夜间模式下的文本颜色 */
 }
 
 .blog-card p {
