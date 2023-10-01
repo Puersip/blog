@@ -18,6 +18,14 @@
 </template>
 
 <script setup>
+import { onActivated } from 'vue';
+import { getLinks } from '@/api/links';
+
+onActivated(() => {
+  console.log('onActivated');
+  getData();
+});
+
 const colors = [
   '#e4735c',
   '#D27992',
@@ -27,63 +35,18 @@ const colors = [
   '#c06c84',
 ];
 
+const links = ref();
+
 function getRandomColor() {
   const randomIndex = Math.floor(Math.random() * colors.length);
   return colors[randomIndex];
 }
 
-const links = [
-  {
-    id: 1,
-    name: 'Friend 1',
-    avatar:
-      'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
-    url: 'https://www.baidu.com',
-  },
-  {
-    id: 2,
-    name: 'Friend 2',
-    avatar:
-      'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
-    url: 'https://www.baidu.com',
-  },
-  {
-    id: 3,
-    name: 'Friend 3',
-    avatar:
-      'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
-    url: 'https://www.baidu.com',
-  },
-  {
-    id: 4,
-    name: 'Friend 4',
-    avatar:
-      'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
-    url: 'https://www.baidu.com',
-  },
-  {
-    id: 5,
-    name: 'Friend 5',
-    avatar:
-      'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
-    url: 'https://www.baidu.com',
-  },
-  {
-    id: 6,
-    name: 'Friend 6',
-    avatar:
-      'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
-    url: 'https://www.baidu.com',
-  },
-  {
-    id: 7,
-    name: 'Friend 7',
-    avatar:
-      'https://khighness-blog.oss-cn-shanghai.aliyuncs.com/avatar/Khighness.jpg',
-    url: 'https://www.baidu.com',
-  },
-  // ... 可以添加更多的友链数据
-];
+function getData() {
+  getLinks().then((res) => {
+    links.value = res.data;
+  });
+}
 </script>
 
 <style lang="scss" scoped>
