@@ -32,7 +32,7 @@ const props = defineProps({
   height: 25vh; /* 占四分之一的屏幕高度 */
   min-height: 200px; /* 固定最小的高度 */
   box-sizing: border-box; /* 包含内边距和边框在内的盒模型 */
-  transition: box-shadow 0.5s ease; /* 添加阴影变化的过渡效果，持续时间为0.5秒 */
+  transition: box-shadow 1s ease; /* 添加阴影变化的过渡效果，持续时间为0.5秒 */
 }
 
 .blog-card h2 {
