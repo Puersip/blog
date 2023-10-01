@@ -40,7 +40,6 @@ export const basicRoutes = [
         component: () => import('@/views/archives/archivesPage.vue'),
         meta: {
           title: '归档',
-          icon: 'mdi:square-rounded-badge',
           order: 1,
           keepAlive: true,
         },
@@ -50,8 +49,7 @@ export const basicRoutes = [
         path: '/links',
         component: () => import('@/views/links/linksPage.vue'),
         meta: {
-          title: '友人帐',
-          icon: 'mdi:human-queue',
+          title: '友链',
           order: 2,
           keepAlive: true,
         },

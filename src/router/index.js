@@ -5,6 +5,7 @@ import {
   EMPTY_ROUTE,
 } from '@/router/routes/index.js';
 import { asyncRoutes } from './routes';
+import { setupRouterGuard } from './guard';
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -36,5 +37,6 @@ async function addDynamicRoutes() {
 
 export async function setupRouter(app) {
   await addDynamicRoutes();
+  setupRouterGuard(router);
   app.use(router);
 }
