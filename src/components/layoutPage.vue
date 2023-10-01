@@ -35,10 +35,10 @@ function scrollToTop() {
   background-color: #b8aebb;
   border: none;
   border-radius: 50%; /* 将按钮变成圆形 */
-  transition: background-color 0.3s ease;
+  transition: background-color 1s ease;
 }
 
 .scroll-top-btn:hover {
-  background-color: #414345; /* 悬停时的背景色 */
+  background-color: #1778d9; /* 悬停时的背景色 */
 }
 </style>
