@@ -26,6 +26,7 @@ const props = defineProps({
   border-radius: 10px;
   padding: 15px 25px;
   margin: 15px;
+  align-items: center;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -57,6 +58,7 @@ const props = defineProps({
 }
 
 .blog-card p {
+  height: 100%;
   color: #555;
   text-align: left; /* 文字靠左对齐 */
 }
@@ -68,5 +70,11 @@ const props = defineProps({
 .night-mode {
   background-color: #333; /* 夜间模式下的背景色 */
   color: #fff; /* 夜间模式下的文本颜色 */
+}
+
+.blog-card p {
+  font-size: 14px;
+  margin: 10px;
+  padding: 10px;
 }
 </style>
