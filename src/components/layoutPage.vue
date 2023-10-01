@@ -7,6 +7,7 @@
   </router-view>
   <!-- 返回顶部按钮 -->
   <TheIcon
+    v-show="showScrollBtn"
     icon="icon-park-twotone:up-two"
     class="scroll-top-btn"
     @click="scrollToTop"
@@ -16,6 +17,13 @@
 <script setup>
 import NavBar from '@/components/layout/NavBar.vue';
 import { scrollToTop } from '@/utils/common/';
+
+const SCROLL_THRESHOLD = 200; // 滚动超过200px时显示返回顶部按钮
+const showScrollBtn = ref(false);
+
+window.addEventListener('scroll', () => {
+  showScrollBtn.value = window.scrollY > SCROLL_THRESHOLD;
+});
 </script>
 
 <style lang="scss" scoped>
