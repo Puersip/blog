@@ -1,12 +1,10 @@
 <template>
   <NavBar></NavBar>
-  <div>
-    <router-view v-slot="{ Component }">
-      <keep-alive>
-        <component :is="Component" />
-      </keep-alive>
-    </router-view>
-  </div>
+  <router-view v-slot="{ Component }">
+    <keep-alive>
+      <component :is="Component" />
+    </keep-alive>
+  </router-view>
   <!-- 返回顶部按钮 -->
   <TheIcon
     icon="icon-park-twotone:up-two"

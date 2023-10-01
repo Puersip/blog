@@ -1,9 +1,10 @@
 <template>
   <div class="categories">
-    <div v-for="(category, index) in categories" :key="index" class="category">
-      <span class="dot"></span>
-      {{ category.key }} ({{ category.value }})
-    </div>
+    <ul>
+      <li v-for="(category, index) in categories" :key="index">
+        {{ category.key }} ({{ category.value }})
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -16,22 +17,16 @@ const categories = [
 </script>
 
 <style lang="scss" scoped>
-.categories {
-  display: flex;
-  flex-direction: column;
+.categories ul {
+  list-style: none;
+  padding: 0;
 }
 
-.category {
+.categories li {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: gray;
-  margin-right: 10px;
+  cursor: pointer;
+  list-style-type: disc; /* 设置列表项前面的标志为小黑点 */
 }
 </style>
