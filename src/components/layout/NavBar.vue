@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="navbar">
-      <router-link to="/"><Icon icon="mdi-light:home" />首页</router-link>
+      <router-link to="/"><TheIcon icon="mdi-light:home" />首页</router-link>
       <router-link to="/category">分类</router-link>
       <router-link to="/archives">归档</router-link>
       <router-link to="/links">友链</router-link>
@@ -34,6 +34,7 @@ defineOptions({ name: 'NavBar' });
 .navbar a {
   display: inline-block;
   padding: 14px 16px;
+  line-height: 21px;
   color: #f2f2f2;
   text-decoration: none;
   transition: background-color 0.3s; /* 添加选择特效 */

@@ -1,9 +1,9 @@
-import { Icon } from '@iconify/vue';
+import theIcon from '@/components/the-icon/theIcon.vue';
 
 const plugin = {
   install(app) {
     // eslint-disable-next-line vue/multi-word-component-names
-    app.component('Icon', Icon);
+    app.component('TheIcon', theIcon);
   },
 };
 

@@ -8,8 +8,6 @@
         :is-night-mode="DarkMode"
       />
     </div>
-    <!-- 返回顶部按钮 -->
-    <button class="scroll-top-btn" @click="scrollToTop">UP</button>
   </div>
 </template>
 
@@ -34,13 +32,6 @@ function getData() {
     blogs.value = res.data;
   });
 }
-
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-}
 </script>
 
 <style scoped>
@@ -60,22 +51,5 @@ function scrollToTop() {
   .blog-card {
     width: 100%; /* 当屏幕宽度小于等于 768px 时，卡片占据整个屏幕宽度 */
   }
-}
-
-.scroll-top-btn {
-  position: fixed;
-  right: 40px;
-  bottom: 40px;
-  padding: 20px;
-  color: white;
-  cursor: pointer;
-  background-color: #007bff;
-  border: none;
-  border-radius: 50%; /* 将按钮变成圆形 */
-  transition: background-color 0.3s ease;
-}
-
-.scroll-top-btn:hover {
-  background-color: #0056b3; /* 悬停时的背景色 */
 }
 </style>

@@ -5,10 +5,40 @@
       <component :is="Component" />
     </keep-alive>
   </router-view>
+  <!-- 返回顶部按钮 -->
+  <TheIcon
+    icon="icon-park-twotone:up-two"
+    class="scroll-top-btn"
+    @click="scrollToTop"
+  ></TheIcon>
 </template>
 
 <script setup>
 import NavBar from '@/components/layout/NavBar.vue';
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.scroll-top-btn {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  background-color: #b8aebb;
+  border: none;
+  border-radius: 50%; /* 将按钮变成圆形 */
+  transition: background-color 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background-color: #414345; /* 悬停时的背景色 */
+}
+</style>
