@@ -12,11 +12,21 @@
 </template>
 
 <script setup>
-const categories = [
-  { key: 'java', value: 10 },
-  { key: 'javascript', value: 2 },
-  { key: 'vue', value: 3 },
-];
+import { onActivated, ref } from 'vue';
+import { getCategory } from '@/api/category';
+
+const categories = ref();
+
+onActivated(() => {
+  console.log('onActivated');
+  getData();
+});
+
+function getData() {
+  getCategory().then((res) => {
+    categories.value = res.data;
+  });
+}
 </script>
 
 <style lang="scss" scoped>
