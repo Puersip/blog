@@ -1,11 +1,10 @@
 <template>
-  <router-link
-    :to="'/blog/' + props.blog.id"
-    :class="{ 'blog-card': true, 'night-mode': isNightMode }"
-  >
-    <h2>{{ props.blog.title }}</h2>
+  <div :class="{ 'blog-card': true, 'night-mode': isNightMode }">
+    <router-link :to="'/blog/' + props.blog.id">
+      <h2>{{ props.blog.title }}</h2>
+    </router-link>
     <p>{{ props.blog.summary }}</p>
-  </router-link>
+  </div>
 </template>
 
 <script setup>
@@ -25,7 +24,7 @@ const props = defineProps({
 .blog-card {
   // border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 15px;
+  padding: 15px 25px;
   margin: 15px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -42,15 +41,28 @@ const props = defineProps({
 .blog-card h2 {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: #333;
+  text-align: left; /* 文字靠左对齐 */
+  transition:
+    font-size 0.3s,
+    margin-bottom 0.3s,
+    color 0.3s; /* 添加过渡效果，时长为0.3秒 */
+}
+
+.blog-card h2:hover {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #287ec9;
+  cursor: pointer; /* 鼠标悬停时变成手形状 */
 }
 
 .blog-card p {
   color: #555;
+  text-align: left; /* 文字靠左对齐 */
 }
 
 .blog-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
-  cursor: pointer; /* 鼠标悬停时变成手形状 */
 }
 
 .night-mode {
