@@ -24,4 +24,8 @@ async function getData(id) {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.page {
+  width: 60vw;
+}
+</style>

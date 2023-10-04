@@ -75,7 +75,6 @@ export const EMPTY_ROUTE = {
 
 // 根据modules动态配置路由
 const modules = import.meta.glob('@/router/modules/*.js', { eager: true });
-console.log(modules);
 const asyncRoutes = [];
 Object.keys(modules).forEach((key) => {
   asyncRoutes.push(modules[key].default);
