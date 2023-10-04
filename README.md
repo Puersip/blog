@@ -67,10 +67,8 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - 🖖 Vue 3 - 渐进式 JavaScript 框架
 - 🚦 Vue Router - 官方路由管理器
 - 📦 Pinia - 值得你喜欢的 Vue Store
-- 💻 TDesign - TDesign 适配桌面端的组件库
-- 🎨 Less - CSS 预处理器
 - 🔗 Axios - 一个基于 promise 的网络请求库，可以用于浏览器和 node.js
 - 🧰 Husky + Lint-Staged - Git Hook 工具
 - 🛡️ EditorConfig + ESLint + Prettier + Stylelint - 代码规范
 - 🔨 Commitizen + Commitlint - 提交规范
-- 💡 GitHub Actions - 自动部署
+- 💡 GitHub Actions - 自动部署 (TODO)
