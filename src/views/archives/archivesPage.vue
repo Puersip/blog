@@ -37,6 +37,10 @@ function getData() {
   width: 40vw;
 }
 
+.page h2 {
+  text-align: left;
+}
+
 .archive {
   text-align: left;
   align-items: flex-start;
