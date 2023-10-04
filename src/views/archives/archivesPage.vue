@@ -4,8 +4,13 @@
     <div class="archive">
       <div v-for="(entry, archiveIndex) in archive" :key="archiveIndex">
         <h2>{{ entry.date }}</h2>
-        <ul v-for="(title, titleIndex) in entry.titles" :key="titleIndex">
-          <li><span class="dot"></span> {{ title }}</li>
+        <ul v-for="(titles, titleIndex) in entry.titles" :key="titleIndex">
+          <li>
+            <span class="dot"></span>
+            <router-link :to="'/blog/' + titles.id">
+              {{ titles.title }}</router-link
+            >
+          </li>
         </ul>
       </div>
     </div>
