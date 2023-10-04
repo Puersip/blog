@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <v-md-preview :text="md"></v-md-preview>
   </div>
 </template>
@@ -18,9 +18,7 @@ onMounted(async () => {
 });
 
 async function getData(id) {
-  console.log(id);
   getBlogDetails(id).then((res) => {
-    console.log(res.data);
     md.value = res.data.content;
   });
 }
