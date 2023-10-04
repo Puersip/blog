@@ -1,17 +1,22 @@
 <template>
   <NavBar></NavBar>
-  <router-view v-slot="{ Component }">
-    <keep-alive>
-      <component :is="Component" />
-    </keep-alive>
-  </router-view>
-  <!-- 返回顶部按钮 -->
-  <TheIcon
-    v-show="showScrollBtn"
-    icon="icon-park-twotone:up-two"
-    class="scroll-top-btn"
-    @click="scrollToTop"
-  ></TheIcon>
+  <div class="layout">
+    <div>
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
+      <!-- 返回顶部按钮 -->
+      <TheIcon
+        v-show="showScrollBtn"
+        icon="icon-park-twotone:up-two"
+        class="scroll-top-btn"
+        @click="scrollToTop"
+      ></TheIcon>
+    </div>
+    <Footer></Footer>
+  </div>
 </template>
 
 <script setup>
@@ -27,10 +32,16 @@ window.addEventListener('scroll', () => {
 </script>
 
 <style lang="scss" scoped>
+.layout {
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+}
+
 .scroll-top-btn {
   position: fixed;
   right: 40px;
-  bottom: 40px;
+  bottom: 100px;
   padding: 10px;
   color: white;
   cursor: pointer;

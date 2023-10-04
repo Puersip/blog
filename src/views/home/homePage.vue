@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="page">
     <div class="blog-list">
       <BlogCard
         v-for="blog in blogs"
@@ -34,11 +34,6 @@ function getData() {
 </script>
 
 <style scoped>
-.home {
-  padding: 20px;
-  margin-top: 50px;
-}
-
 .blog-list {
   display: flex;
   flex-direction: column; /* 将卡片竖直排列 */

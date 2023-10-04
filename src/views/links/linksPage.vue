@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page">
     <h1>友链</h1>
     <div class="links-container">
       <a
@@ -50,11 +50,8 @@ function getData() {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  margin: 0 auto;
-  padding: 20px;
+.page {
   width: 70vw;
-  text-align: center;
 }
 
 .links-container {

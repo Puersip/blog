@@ -1,13 +1,11 @@
 <template>
-  <div class="categories">
+  <div class="page">
     <h1>分类</h1>
-    <div>
-      <ul>
-        <li v-for="(category, index) in categories" :key="index">
-          <span class="dot"></span> {{ category.key }} ({{ category.value }})
-        </li>
-      </ul>
-    </div>
+    <ul>
+      <li v-for="(category, index) in categories" :key="index">
+        <span class="dot"></span> {{ category.key }} ({{ category.value }})
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -32,18 +30,15 @@ function getData() {
 </script>
 
 <style lang="scss" scoped>
-.categories {
-  margin: 0 auto;
-  padding: 20px;
+.page {
   width: 40vw;
-  text-align: center;
 }
-.categories ul {
+.page ul {
   list-style: none;
-  padding: 20px;
+  padding: 0px;
 }
 
-.categories li {
+.page li {
   font-size: 16px;
   display: flex;
   align-items: center;
@@ -60,7 +55,7 @@ function getData() {
   transition: background-color 1s ease;
 }
 
-.categories li:hover .dot {
+.page li:hover .dot {
   border-color: rgb(212, 165, 79); /* 鼠标悬停时，小黑点变色 */
 }
 </style>

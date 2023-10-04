@@ -12,7 +12,7 @@
 }
 
 #app {
-  padding-top: 2rem;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -56,6 +56,13 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  margin: 10% auto 0%;
+  text-align: center;
+}
 
 
 
