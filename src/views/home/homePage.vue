@@ -1,14 +1,21 @@
 <template>
   <div class="home">
     <div class="blog-list">
-      <BlogCard v-for="blog in blogs" :key="blog.id" :blog="blog" />
+      <BlogCard
+        v-for="blog in blogs"
+        :key="blog.id"
+        :blog="blog"
+        :is-dark-mode="isDarkMode()"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import BlogCard from '@/components/blog-card/BlogCard.vue';
 import { getBlogList } from '@/api/blog.js';
+import { isDarkMode } from '@/utils/common/isDarkMode';
 
 defineOptions({ name: 'HomePage' });
 
