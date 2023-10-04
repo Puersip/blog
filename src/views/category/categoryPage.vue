@@ -3,7 +3,10 @@
     <h1>分类</h1>
     <ul>
       <li v-for="(category, index) in categories" :key="index">
-        <span class="dot"></span> {{ category.key }} ({{ category.value }})
+        <span class="dot"></span>
+        <router-link :to="'/categorys/' + category.key"
+          >{{ category.key }} ({{ category.value }})</router-link
+        >
       </li>
     </ul>
   </div>
