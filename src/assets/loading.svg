@@ -1,0 +1,16 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- 定义一个动画 -->
+    <defs>
+        <animateTransform id="spin" attributeName="transform" attributeType="XML" type="rotate" from="0 50 50" to="360 50 50" dur="2s" repeatCount="indefinite" />
+    </defs>
+
+    <!-- 背景 -->
+    <rect width="100" height="100" fill="#333" />
+
+    <!-- "HB" 文字 -->
+    <text x="50" y="60" font-family="Arial" font-size="40" fill="#fff" text-anchor="middle" transform="rotate(0 50 50)">
+        HB
+        <!-- 应用动画 -->
+        <use xlink:href="#spin" />
+    </text>
+</svg>
