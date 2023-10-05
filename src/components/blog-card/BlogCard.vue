@@ -18,8 +18,6 @@ const props = defineProps({
     default: true,
   },
 });
-
-console.log(props.isDarkMode);
 </script>
 
 <style lang="scss" scoped>

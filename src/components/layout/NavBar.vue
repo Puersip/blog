@@ -50,6 +50,7 @@ const githubAddress = import.meta.env.VITE_GITHUB;
 .navbar-left {
   flex: 0.2;
   font-weight: bold;
+  color: #f2f2f2;
 }
 
 .navbar-center {
