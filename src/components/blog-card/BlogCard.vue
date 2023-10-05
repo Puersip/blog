@@ -3,6 +3,13 @@
     <router-link :to="'/blog/' + props.blog.id">
       <h2>{{ props.blog.title }}</h2>
     </router-link>
+    <div class="icon">
+      <TheIcon
+        icon="material-symbols:calendar-month"
+        style="font-size: 13px"
+      ></TheIcon
+      ><span>发表于 {{ props.blog.createTime }}</span>
+    </div>
     <p>{{ props.blog.summary }}</p>
   </div>
 </template>
@@ -54,6 +61,15 @@ const props = defineProps({
   margin-bottom: 10px;
   color: #287ec9;
   cursor: pointer; /* 鼠标悬停时变成手形状 */
+}
+
+.blog-card .icon {
+  line-height: 13px;
+}
+
+.blog-card .icon span {
+  margin-left: 5px;
+  font-size: 12px;
 }
 
 .blog-card p {

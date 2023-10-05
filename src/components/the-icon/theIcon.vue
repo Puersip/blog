@@ -7,7 +7,7 @@ import { Icon } from '@iconify/vue';
 
 const props = defineProps({
   style: {
-    type: String,
+    type: Object,
     default: null,
   },
 });
