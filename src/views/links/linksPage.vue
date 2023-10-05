@@ -71,21 +71,6 @@ function getData() {
   border: 1px solid #ccc;
   border-radius: 10px;
   transition: transform 0.5s ease;
-  opacity: 0;
-  transform: translateY(-20px); /* 初始位置上移 20 像素 */
-  /* 添加动画 */
-  animation: fadeInUp 1s ease forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(-20px); /* 初始位置上移 20 像素 */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0); /* 最终位置为原始位置 */
-  }
 }
 
 .avatar {

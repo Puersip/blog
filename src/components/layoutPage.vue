@@ -1,12 +1,16 @@
 <template>
   <NavBar></NavBar>
   <div class="layout">
+    <transition name="fade-slide" mode="out-in" appear>
+      <div>
+        <router-view v-slot="{ Component }">
+          <keep-alive>
+            <component :is="Component" />
+          </keep-alive>
+        </router-view>
+      </div>
+    </transition>
     <div>
-      <router-view v-slot="{ Component }">
-        <keep-alive>
-          <component :is="Component" />
-        </keep-alive>
-      </router-view>
       <!-- 返回顶部按钮 -->
       <TheIcon
         v-show="showScrollBtn"
@@ -53,5 +57,18 @@ window.addEventListener('scroll', () => {
 
 .scroll-top-btn:hover {
   background-color: #1778d9; /* 悬停时的背景色 */
+}
+
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition:
+    opacity 1s,
+    transform 2s;
+}
+
+.fade-up-enter,
+.fade-up-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 </style>
