@@ -27,7 +27,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
     ├── router/                    // 路由配置目录
     	├── modules/  // 路由模块
         ├── index.js  // 路由配置文件
-    ├── store/                     // 状态管理目录
+    ├── stores/                    // 状态管理目录
         ├── modules/  // 仓库模块
         ├── index.js  // 仓库配置文件
     ├── style/                     // 通用样式目录

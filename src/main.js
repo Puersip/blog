@@ -3,7 +3,7 @@ import '@/style/style.css';
 import { createVMdPreview } from '~/build/plugin/markdown.js';
 import App from './App.vue';
 import { setupRouter } from '@/router';
-import { setupStore } from '@/store';
+import { setupStore } from '@/stores';
 import { createIconify } from '~/build/plugin/iconify';
 
 async function setupApp() {
